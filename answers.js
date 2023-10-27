@@ -28,20 +28,28 @@
 // }
 
 // Wild Wild Life
-const wolfy = ["Wolfy", "wolf", 16, "Yukon Territory"]
-const sharky = ["Sharky", "shark", 20, "Left Coast"]
-const plantee = ["Plantee", "plant",  5000 , "Mordor"]
-const porgee = ["Porgee", "Porg", 186, "Ahch-To"]
-const dart = ["D'Art" , "Demogorgan Dog", 2, "Upside Down", "NOT A HOME TOWN"]
+// const wolfy = ["Wolfy", "wolf", 16, "Yukon Territory"]
+// const sharky = ["Sharky", "shark", 20, "Left Coast"]
+// const plantee = ["Plantee", "plant",  5000 , "Mordor"]
+// const porgee = ["Porgee", "Porg", 186, "Ahch-To"]
+// const dart = ["D'Art" , "Demogorgan Dog", 2, "Upside Down", "NOT A HOME TOWN"]
 
-plantee[2]++
-// console.log(plantee)
-wolfy[3] = "Gotham City"
-dart[3] = [dart[3], "Hawkins"]
-// console.log(dart)
+// plantee[2]++
+// // console.log(plantee)
+// wolfy[3] = "Gotham City"
+// dart[3] = [dart[3], "Hawkins"]
+// // console.log(dart)
 
-wolfy.shift()
-// console.log(wolfy)
-const gameboy = wolfy
-gameboy.unshift("Gameboy")
-console.log(gameboy)
+// wolfy.shift()
+// // console.log(wolfy)
+// const gameboy = wolfy
+// gameboy.unshift("Gameboy")
+// console.log(gameboy)
+
+
+const turtles = ["Donatello", "Leonardo", "Raphael", "Michaelangelo"]
+
+for(let i of turtles){
+  console.log(i.toUpperCase())
+}
+
