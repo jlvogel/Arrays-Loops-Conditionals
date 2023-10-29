@@ -1,21 +1,22 @@
-////////////////////////////////////////////////
-//////      Easy Going
-////////////////////////////////////////////////
+console.log(`
+//////////////////////////////////////////////
+////////      Easy Going
+//////////////////////////////////////////////`)
 
 
-// Write a for loop that will log the numbers 1 through 20.
-console.log(`Write a for loop that will log the numbers 1 through 20.`)
+console.log(`
+Write a for loop that will log the numbers 1 through 20.`)
 
 for(let i =1; i<=20; i++){
   console.log(i)
 }
 
 
-////////////////////////////////////////////////
-//////      Get Even
-////////////////////////////////////////////////
+console.log(`
 
-// Write a for loop that will log only the even numbers in 0 through 200
+//////////////////////////////////////////////
+////////      Get Even
+//////////////////////////////////////////////`)
 
 console.log(`
 Write a for loop that will log only the even numbers in 0 through 200`)
@@ -25,9 +26,11 @@ for(let i = 0; i <= 200; i=i+2){
 }
 
 
-////////////////////////////////////////////////
-//////      Fizz Buzz
-////////////////////////////////////////////////
+console.log(`
+
+//////////////////////////////////////////////
+////////      Fizz Buzz
+//////////////////////////////////////////////`)
 
 console.log(`
 1. Write a javascript application that logs all numbers from 1 - 100.
@@ -43,9 +46,11 @@ for(let i = 1; i <= 100; i++){
   else {console.log(i)}
 }
 
-////////////////////////////////////////////////
-//////      Wild Wild Life
-////////////////////////////////////////////////
+console.log(`
+
+//////////////////////////////////////////////
+////////      Wild Wild Life
+//////////////////////////////////////////////`)
 
 // Use the following arrays to answer the questions below (name,species ,age, hometown): You should be modifying the elements by accessing them. It is up to you which methods to use.
 
@@ -77,19 +82,28 @@ console.log(`
 4. Porgee decides that Wolfy can't be named "Wolfy" anymore. Remove "Wolfy" from the wolfy array and replace it with "Gameboy".`)
 
 wolfy.shift()
-// // console.log(wolfy)
-// const gameboy = wolfy
-// gameboy.unshift("Gameboy")
-// console.log(gameboy)
 wolfy.unshift("Gameboy")
 console.log(wolfy)
 
+console.log(`
 
-// const turtles = ["Donatello", "Leonardo", "Raphael", "Michaelangelo"]
+//////////////////////////////////////////////
+////////      Yell at the Ninja Turtles
+//////////////////////////////////////////////`)
 
-// for(let i of turtles){
-//   console.log(i.toUpperCase())
-// }
+console.log(`
+1. Create an array with the members of the ninja turtles (Donatello, Leonardo, Raphael, Michaelangelo)`)
+
+const turtles = ["Donatello", "Leonardo", "Raphael", "Michaelangelo"]
+console.log(turtles)
+
+console.log(`
+2. Use a for of loop (not a typo - try it out! Try a for of lop) to call toUpperCase() on each of them and print out the result.`)
+
+for(let turtle of turtles){
+  turtles[turtles.indexOf(turtle)] = turtle.toUpperCase()
+}
+console.log(turtles)
 
 // const favMovies = ['Jaws', 'The Fellowship of the Ring', 'Howl\'s Moving Castle', 'Django Unchained', 'Cloud Atlas', 'The Usual Suspects', 'Toy Story', 'Conan the Barbarian', 'Titanic', 'Harry Potter', 'Fried Green Tomatoes', 'Volver', 'Oculus', 'Seven', 'Black Panther', 'Harry Potter', 'Imitation of Life', 'Snatch', 'Fast and Furious'];
 
