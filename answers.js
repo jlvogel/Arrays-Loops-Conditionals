@@ -53,62 +53,79 @@
 //   console.log(i.toUpperCase())
 // }
 
-const favMovies = ['Jaws', 'The Fellowship of the Ring', 'Howl\'s Moving Castle', 'Django Unchained', 'Cloud Atlas', 'The Usual Suspects', 'Toy Story', 'Conan the Barbarian', 'Titanic', 'Harry Potter', 'Fried Green Tomatoes', 'Volver', 'Oculus', 'Seven', 'Black Panther', 'Harry Potter', 'Imitation of Life', 'Snatch', 'Fast and Furious'];
+// const favMovies = ['Jaws', 'The Fellowship of the Ring', 'Howl\'s Moving Castle', 'Django Unchained', 'Cloud Atlas', 'The Usual Suspects', 'Toy Story', 'Conan the Barbarian', 'Titanic', 'Harry Potter', 'Fried Green Tomatoes', 'Volver', 'Oculus', 'Seven', 'Black Panther', 'Harry Potter', 'Imitation of Life', 'Snatch', 'Fast and Furious'];
 
-for(i in favMovies){
-  if(favMovies[i] == 'Titanic'){
-    // console.log(`The index of the Titanic is ${i}`)
-  }
-}
+// for(i in favMovies){
+//   if(favMovies[i] == 'Titanic'){
+//     // console.log(`The index of the Titanic is ${i}`)
+//   }
+// }
+
+// // console.log(favMovies)
+
+// favMovies.sort()   // sorted alphabetical
+// // console.log(favMovies)  // permanently altered
+
+// favMovies.pop()
+// // console.log(favMovies)
+
+// favMovies.push("Guardians of the Galaxy")
+// // console.log(favMovies)
+
+// favMovies.reverse()
+
+// favMovies.shift()
+// // console.log(favMovies)
+
+// // favMovies.unshift()
+// // console.log(favMovies.length)
+// // console.log(favMovies.unshift())
+
+// // console.log(favMovies)
+// // console.log(favMovies.indexOf('Django Unchained'))
+
+// favMovies.splice(favMovies.indexOf('Django Unchained'), 1, 'Avatar')
 
 // console.log(favMovies)
 
-favMovies.sort()   // sorted alphabetical
-// console.log(favMovies)  // permanently altered
+// function midpoint(num){
+//   return Math.round(num/2)
+// }
 
-favMovies.pop()
-// console.log(favMovies)
+// const middle = midpoint(favMovies.length)
 
-favMovies.push("Guardians of the Galaxy")
-// console.log(favMovies)
+// // console.log(favMovies.slice(middle))
 
-favMovies.reverse()
+// favMovies.slice(middle)
 
-favMovies.shift()
-// console.log(favMovies)
+// console.log(favMovies)  // no slicing did not permanently alter our array
 
-// favMovies.unshift()
-// console.log(favMovies.length)
-// console.log(favMovies.unshift())
+// let slicedArray = favMovies.slice(middle)
 
-// console.log(favMovies)
-// console.log(favMovies.indexOf('Django Unchained'))
+// console.log(slicedArray)
 
-favMovies.splice(favMovies.indexOf('Django Unchained'), 1, 'Avatar')
+// console.log(favMovies.indexOf('Fast and Furious'))
 
-console.log(favMovies)
+// console.log(favMovies.indexOf('A movie not in the array')) //Returns -1
 
-function midpoint(num){
-  return Math.round(num/2)
-}
+// // 12. Thought question: that we declared the variable favMovies with const, and yet, we were allowed to change the array. Weird? Should we have used let?
 
-const middle = midpoint(favMovies.length)
+// // const doesn't allow reassignment of the variable but since arrays are mutable the elements inside can still be changed.  We could have used let.  Should we have?  Well since we were not reassigning the variable const works fine in my opinion.  However since we are changing the contents there does seem to be a lot of different opinions about this on the web.  One way to stop this would be to use Object.freeze
 
-// console.log(favMovies.slice(middle))
+const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
+                    ["Lucinda", "Jacc", "Neff", "Snoop"],
+                    ["Petunia", ["Baked Goods", "Waldo"]]];
 
-favMovies.slice(middle)
+whereIsWaldo.splice(whereIsWaldo.indexOf('Eggbert'),1)
+console.log(whereIsWaldo)
 
-console.log(favMovies)  // no slicing did not permanently alter our array
+// Change "Neff" to "No One"
 
-let slicedArray = favMovies.slice(middle)
+// whereIsWaldo[1][2] = 'No One'
 
-console.log(slicedArray)
+// console.log(whereIsWaldo)
 
-console.log(favMovies.indexOf('Fast and Furious'))
+// Ok that's one way but let's find where Neff is inside the array for a greater challenge.
 
-console.log(favMovies.indexOf('A movie not in the array')) //Returns -1
-
-// 12. Thought question: that we declared the variable favMovies with const, and yet, we were allowed to change the array. Weird? Should we have used let?
-
-// const doesn't allow reassignment of the variable but since arrays are mutable the elements inside can still be changed.  We could have used let.  Should we have?  Well since we were not reassigning the variable const works fine in my opinion.  However since we are changing the contents there does seem to be a lot of different opinions about this on the web.  One way to stop this would be to use Object.freeze
+//...  I think it would involve a recursive function and right now since its 12:30 AM I'm going to move on - but this sounds like a fun challenge for later loop through an array of unknown nesting to go through every element in the array and all sub arrays and all sub sub arrays and so on... until we find 'Waldo' and then we have the indices. To me that would be truely finding Waldo
 
