@@ -138,28 +138,60 @@
 
 // 2. For every even number in your loop, log "...human...why you taking pictures of me?...","...the catnip made me do it...", or "...why does the red dot always get away..." at random.
 
-function random_message(){
-  let x = Math.random()
-  if(x <= 1/3){
-    return "...human...why you taking pictures of me?..."
-  }
-  else if(x <= 2/3) {
-    return "...the catnip made me do it..."
-  }
-  else {
-    return "...why does the red dot always get away..."
-  }
-}
-
-// for(let i=1; i<=30; i++){
-//   console.log(random_message())
+// function random_message(){
+//   let x = Math.random()
+//   if(x <= 1/3){
+//     return "...human...why you taking pictures of me?..."
+//   }
+//   else if(x <= 2/3) {
+//     return "...the catnip made me do it..."
+//   }
+//   else {
+//     return "...why does the red dot always get away..."
+//   }
 // }
 
-for(let i = 1; i<=20; i++){
-  if(i%2 !=0){
-    console.log("Love me, pet me! HSSSSSS!")
+// // for(let i=1; i<=30; i++){
+// //   console.log(random_message())
+// // }
+
+// for(let i = 1; i<=20; i++){
+//   if(i%2 !=0){
+//     console.log("Love me, pet me! HSSSSSS!")
+//   }
+//   else {
+//     console.log(random_message())
+//   }
+// }
+
+// Find the Median
+
+// Find the median number in the following nums array, then console.log that number.
+
+// hint if you check the length of the array / 2, you might get not get a whole number. In which case, look into Math.floor( // something )
+
+const nums = [14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,18,12,17,12,71,18,15,12];
+
+// Expected output:
+// => 15
+
+// nums.sort()
+
+// console.log(nums)
+
+// Ok the median would the value of the middle element in a sorted array.  In the case of an array with an even number of elements this would be the average of the 2 middle numbers.
+
+function median(array){
+  array.sort()
+  console.log(array)
+  if(array.length % 2 != 0){
+    // the median is the middle element.  i.e for an array of 19 elements [0] thru [18] the middle element would be the 10th element which would correspond to [9] (Math.floor(19 / 2))
+    return array[Math.floor(array.length/2)]
   }
   else {
-    console.log(random_message())
+    // the median is the average of the 2 middle elements.  i.e for an array of 18 elements [0] thru [17] the middle element would be the average of the 9th and 10th element ([8] and [9]) / 2.
+    return array[(array[array.length / 2] + array[array.length / 2 - 1])/2]
   }
 }
+
+console.log(median(nums))
