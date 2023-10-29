@@ -112,12 +112,12 @@
 
 // // const doesn't allow reassignment of the variable but since arrays are mutable the elements inside can still be changed.  We could have used let.  Should we have?  Well since we were not reassigning the variable const works fine in my opinion.  However since we are changing the contents there does seem to be a lot of different opinions about this on the web.  One way to stop this would be to use Object.freeze
 
-const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
-                    ["Lucinda", "Jacc", "Neff", "Snoop"],
-                    ["Petunia", ["Baked Goods", "Waldo"]]];
+// const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
+//                     ["Lucinda", "Jacc", "Neff", "Snoop"],
+//                     ["Petunia", ["Baked Goods", "Waldo"]]];
 
-whereIsWaldo.splice(whereIsWaldo.indexOf('Eggbert'),1)
-console.log(whereIsWaldo)
+// whereIsWaldo.splice(whereIsWaldo.indexOf('Eggbert'),1)
+// console.log(whereIsWaldo)
 
 // Change "Neff" to "No One"
 
@@ -129,3 +129,37 @@ console.log(whereIsWaldo)
 
 //...  I think it would involve a recursive function and right now since its 12:30 AM I'm going to move on - but this sounds like a fun challenge for later loop through an array of unknown nesting to go through every element in the array and all sub arrays and all sub sub arrays and so on... until we find 'Waldo' and then we have the indices. To me that would be truely finding Waldo
 
+// Excited Kitten
+// 1. Write code that logs "Love me, pet me! HSSSSSS!" 20 times.
+
+// for(let i = 1; i<=20; i++){
+//   console.log("Love me, pet me! HSSSSSS!")
+// }
+
+// 2. For every even number in your loop, log "...human...why you taking pictures of me?...","...the catnip made me do it...", or "...why does the red dot always get away..." at random.
+
+function random_message(){
+  let x = Math.random()
+  if(x <= 1/3){
+    return "...human...why you taking pictures of me?..."
+  }
+  else if(x <= 2/3) {
+    return "...the catnip made me do it..."
+  }
+  else {
+    return "...why does the red dot always get away..."
+  }
+}
+
+// for(let i=1; i<=30; i++){
+//   console.log(random_message())
+// }
+
+for(let i = 1; i<=20; i++){
+  if(i%2 !=0){
+    console.log("Love me, pet me! HSSSSSS!")
+  }
+  else {
+    console.log(random_message())
+  }
+}
