@@ -234,6 +234,8 @@ const thomsCloset = [
   ]
 ];
 
+const thomsClosetCopy = JSON.parse(JSON.stringify(thomsCloset))
+
 // Alien Attire
 // Kristyn's left shoe has traveled through time and space and turned up in Thom's accessories drawer! Remove Kristyn's shoe from the array and save it to the variable kristynsShoe. Use that variable to add Kristyn's lost shoe to Thom's accessories array.
 
@@ -344,4 +346,23 @@ for(item of kristynsCloset) {
 
 for(item of kristynsClosetCopy) {
   console.log(`WHIRR: Now washing ${item}`)
+}
+
+// Inventory
+
+// 2. Thom wants to do inventory on his closet. Using bracket notation, log the arrays containing all of Thom's shirts, pants, and accessories.
+
+// console.log(thomsCloset)
+
+// need to make a clean copy of Thom's closet also.  going back in code.
+
+console.log(thomsClosetCopy)
+
+n = 0
+for(item of thomsClosetCopy) {
+  n++
+  if(n==1){console.log(`Thom's shirts: `)}
+  else if (n==2){console.log(`Thom's pants: `)}
+  else {console.log(`Thom's accessories: `)}
+  console.log(item)
 }
