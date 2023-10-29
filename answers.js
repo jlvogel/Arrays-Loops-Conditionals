@@ -211,6 +211,8 @@ const kristynsCloset = [
   "marshmallow peeps"
 ];
 
+const kristynsClosetCopy = JSON.parse(JSON.stringify(kristynsCloset))
+
 // Thom's closet is more complicated. Check out this nested data structure!!
 const thomsCloset = [
   [
@@ -300,3 +302,46 @@ for (let i in thomsCloset){
   // console.log(thomsOutfit)
 }
 console.log('thom\'s 3 outfits are: ',thomsOutfit)
+
+// Dirty Laundry
+
+// Continue looking at the closet arrays:
+
+// 1. Time to do laundry - loop through Kristyn's closet and log the sentence "WHIRR: Now washing (item)" for each item in the array
+
+for(item of kristynsCloset) {
+  console.log(`WHIRR: Now washing ${item}`)
+}
+
+// we not that the above for loop does not work.
+// why?  Because we completely popped Kristyn's
+// closet - now there's nothing in it
+
+// what we need to do is make a clean copy of
+// kristynsCloset array back in our code then 
+// loop thru that.
+
+// setting another variable to equal kristynsCloset does not work because it assigns by reference not by value.
+
+
+// Credit to https://www.freecodecamp.org/news/how-to-clone-an-array-in-javascript-1d3183468f6a/     article by Yazeed Bzadough - scroll down to point 8. JSON.parse(JSON.stringify(nestedNumbers) for the following:
+
+// JSON.parse turns a string into an object.
+
+// Combining them can turn an object into a string, and then reverse the process to create a brand new data structure.
+
+// Note: This one safely copies deeply nested objects/arrays!
+
+// nestedNumbers = [[1], [2]];
+// numbersCopy = JSON.parse(JSON.stringify(nestedNumbers));
+
+// numbersCopy[0].push(300);
+// console.log(nestedNumbers, numbersCopy);
+
+// [[1], [2]]
+// [[1, 300], [2]]
+// These two arrays are completely separate!
+
+for(item of kristynsClosetCopy) {
+  console.log(`WHIRR: Now washing ${item}`)
+}
