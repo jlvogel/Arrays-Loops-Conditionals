@@ -170,28 +170,133 @@
 
 // hint if you check the length of the array / 2, you might get not get a whole number. In which case, look into Math.floor( // something )
 
-const nums = [14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,18,12,17,12,71,18,15,12];
+// const nums = [14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,18,12,17,12,71,18,15,12];
 
-// Expected output:
-// => 15
+// // Expected output:
+// // => 15
 
-// nums.sort()
+// // nums.sort()
 
-// console.log(nums)
+// // console.log(nums)
 
-// Ok the median would the value of the middle element in a sorted array.  In the case of an array with an even number of elements this would be the average of the 2 middle numbers.
+// // Ok the median would the value of the middle element in a sorted array.  In the case of an array with an even number of elements this would be the average of the 2 middle numbers.
 
-function median(array){
-  array.sort()
-  console.log(array)
-  if(array.length % 2 != 0){
-    // the median is the middle element.  i.e for an array of 19 elements [0] thru [18] the middle element would be the 10th element which would correspond to [9] (Math.floor(19 / 2))
-    return array[Math.floor(array.length/2)]
-  }
-  else {
-    // the median is the average of the 2 middle elements.  i.e for an array of 18 elements [0] thru [17] the middle element would be the average of the 9th and 10th element ([8] and [9]) / 2.
-    return array[(array[array.length / 2] + array[array.length / 2 - 1])/2]
+// function median(array){
+//   array.sort()
+//   console.log(array)
+//   if(array.length % 2 != 0){
+//     // the median is the middle element.  i.e for an array of 19 elements [0] thru [18] the middle element would be the 10th element which would correspond to [9] (Math.floor(19 / 2))
+//     return array[Math.floor(array.length/2)]
+//   }
+//   else {
+//     // the median is the average of the 2 middle elements.  i.e for an array of 18 elements [0] thru [17] the middle element would be the average of the 9th and 10th element ([8] and [9]) / 2.
+//     return array[(array[array.length / 2] + array[array.length / 2 - 1])/2]
+//   }
+// }
+
+// console.log(median(nums))
+
+// Hungry for More?
+
+// Return of the Closets
+// Below, we've given you examples of Kristyn and Thom's closets modeled as data in JavaScript. Use this data to answer the following questions.
+
+const kristynsCloset = [
+  "left shoe",
+  "cowboy boots",
+  "right sock",
+  "Per Scholas hoodie",
+  "green pants",
+  "yellow knit hat",
+  "marshmallow peeps"
+];
+
+// Thom's closet is more complicated. Check out this nested data structure!!
+const thomsCloset = [
+  [
+    // These are Thom's shirts
+    "grey button-up",
+    "dark grey button-up",
+    "light blue button-up",
+    "blue button-up",
+  ],[
+    // These are Thom's pants
+    "grey jeans",
+    "jeans",
+    "PJs"
+  ],[
+    // Thom's accessories
+    "wool mittens",
+    "wool scarf",
+    "raybans"
+  ]
+];
+
+// Alien Attire
+// Kristyn's left shoe has traveled through time and space and turned up in Thom's accessories drawer! Remove Kristyn's shoe from the array and save it to the variable kristynsShoe. Use that variable to add Kristyn's lost shoe to Thom's accessories array.
+
+kristynsShoe = kristynsCloset.shift()
+
+thomsCloset[2].push(kristynsShoe)
+
+// console.log(thomsCloset)
+
+// Dress Us Up
+// Modify your code to put together 3 separate outfits for Kristyn and Thom. Put the output in a sentence to tell us what we'll be wearing. Mix and match!
+
+// for Kristyn:
+// pseudocode
+// since Kristyn lost her left shoe to thom she now has 6 items in her closet.  we can choose 3 seperate outfits for Kristyn consisting of 2 items each.  We can do this by randomly sorting the array and popping the last 2 on the array 3 times for the outfits.
+
+let points = kristynsCloset
+
+for (let i = points.length -1; i > 0; i--) {
+  let j = Math.floor(Math.random() * i)
+  let k = points[i]
+  points[i] = points[j]
+  points[j] = k
+}
+
+// console.log(points)
+
+let kristynsOutfit = []
+let l = points.length
+let n = 0
+for(let i=0; i< l; i+=2){
+  // console.log(n, kristynsCloset)
+  kristynsOutfit[n] = [points.pop(), points.pop()]
+  n++
+}
+
+console.log('kristyn\'s 3 outfits are: ',kristynsOutfit)
+
+// Ok Thoms outfits are calculated a little differently:
+
+// we will first shuffle his 3 different categories.  Then we will pop like before.
+
+for (let item of thomsCloset) {
+  let points = item
+  for (i = points.length -1; i > 0; i--) {
+    let j = Math.floor(Math.random() * i)
+    let k = points[i]
+    points[i] = points[j]
+    points[j] = k
   }
 }
 
-console.log(median(nums))
+// console.log(thomsCloset)
+
+let thomsOutfit = []
+
+for (let i in thomsCloset){
+  thomsOutfit[i] = []
+  for (let item in thomsCloset) {
+    
+      // console.log(i, item)
+      // console.log(thomsCloset[item].pop())
+      thomsOutfit[i].push(thomsCloset[item].pop())
+    
+  }
+  // console.log(thomsOutfit)
+}
+console.log('thom\'s 3 outfits are: ',thomsOutfit)
