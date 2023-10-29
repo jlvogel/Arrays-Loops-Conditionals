@@ -47,9 +47,68 @@
 // console.log(gameboy)
 
 
-const turtles = ["Donatello", "Leonardo", "Raphael", "Michaelangelo"]
+// const turtles = ["Donatello", "Leonardo", "Raphael", "Michaelangelo"]
 
-for(let i of turtles){
-  console.log(i.toUpperCase())
+// for(let i of turtles){
+//   console.log(i.toUpperCase())
+// }
+
+const favMovies = ['Jaws', 'The Fellowship of the Ring', 'Howl\'s Moving Castle', 'Django Unchained', 'Cloud Atlas', 'The Usual Suspects', 'Toy Story', 'Conan the Barbarian', 'Titanic', 'Harry Potter', 'Fried Green Tomatoes', 'Volver', 'Oculus', 'Seven', 'Black Panther', 'Harry Potter', 'Imitation of Life', 'Snatch', 'Fast and Furious'];
+
+for(i in favMovies){
+  if(favMovies[i] == 'Titanic'){
+    // console.log(`The index of the Titanic is ${i}`)
+  }
 }
+
+// console.log(favMovies)
+
+favMovies.sort()   // sorted alphabetical
+// console.log(favMovies)  // permanently altered
+
+favMovies.pop()
+// console.log(favMovies)
+
+favMovies.push("Guardians of the Galaxy")
+// console.log(favMovies)
+
+favMovies.reverse()
+
+favMovies.shift()
+// console.log(favMovies)
+
+// favMovies.unshift()
+// console.log(favMovies.length)
+// console.log(favMovies.unshift())
+
+// console.log(favMovies)
+// console.log(favMovies.indexOf('Django Unchained'))
+
+favMovies.splice(favMovies.indexOf('Django Unchained'), 1, 'Avatar')
+
+console.log(favMovies)
+
+function midpoint(num){
+  return Math.round(num/2)
+}
+
+const middle = midpoint(favMovies.length)
+
+// console.log(favMovies.slice(middle))
+
+favMovies.slice(middle)
+
+console.log(favMovies)  // no slicing did not permanently alter our array
+
+let slicedArray = favMovies.slice(middle)
+
+console.log(slicedArray)
+
+console.log(favMovies.indexOf('Fast and Furious'))
+
+console.log(favMovies.indexOf('A movie not in the array')) //Returns -1
+
+// 12. Thought question: that we declared the variable favMovies with const, and yet, we were allowed to change the array. Weird? Should we have used let?
+
+// const doesn't allow reassignment of the variable but since arrays are mutable the elements inside can still be changed.  We could have used let.  Should we have?  Well since we were not reassigning the variable const works fine in my opinion.  However since we are changing the contents there does seem to be a lot of different opinions about this on the web.  One way to stop this would be to use Object.freeze
 
