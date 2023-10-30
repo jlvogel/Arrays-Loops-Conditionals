@@ -105,64 +105,113 @@ for(let turtle of turtles){
 }
 console.log(turtles)
 
-// const favMovies = ['Jaws', 'The Fellowship of the Ring', 'Howl\'s Moving Castle', 'Django Unchained', 'Cloud Atlas', 'The Usual Suspects', 'Toy Story', 'Conan the Barbarian', 'Titanic', 'Harry Potter', 'Fried Green Tomatoes', 'Volver', 'Oculus', 'Seven', 'Black Panther', 'Harry Potter', 'Imitation of Life', 'Snatch', 'Fast and Furious'];
+console.log(`
 
-// for(i in favMovies){
-//   if(favMovies[i] == 'Titanic'){
-//     // console.log(`The index of the Titanic is ${i}`)
-//   }
-// }
+//////////////////////////////////////////////
+////////      Methods, Revisited
+//////////////////////////////////////////////`)
 
-// // console.log(favMovies)
+// Here is a list favMovies:
+const favMovies = ['Jaws', 'The Fellowship of the Ring', 'Howl\'s Moving Castle', 'Django Unchained', 'Cloud Atlas', 'The Usual Suspects', 'Toy Story', 'Conan the Barbarian', 'Titanic', 'Harry Potter', 'Fried Green Tomatoes', 'Volver', 'Oculus', 'Seven', 'Black Panther', 'Harry Potter', 'Imitation of Life', 'Snatch', 'Fast and Furious'];
 
-// favMovies.sort()   // sorted alphabetical
-// // console.log(favMovies)  // permanently altered
+console.log(`
+Console log: the index of Titanic`)
+console.log(favMovies)
 
-// favMovies.pop()
-// // console.log(favMovies)
+for(i in favMovies){
+  if(favMovies[i] == 'Titanic'){
+    //console.log(`The index of the Titanic is ${i}`)
+    break
+  }
+}
 
-// favMovies.push("Guardians of the Galaxy")
-// // console.log(favMovies)
+// Ok that's one way that works
+// Here's a better way:
 
-// favMovies.reverse()
+console.log(`The index of the Titanic is ${favMovies.indexOf('Titanic')}`)
 
-// favMovies.shift()
-// // console.log(favMovies)
 
-// // favMovies.unshift()
-// // console.log(favMovies.length)
-// // console.log(favMovies.unshift())
+console.log(`
+1. use the .sort method`)
+favMovies.sort()   // sorted alphabetical
+console.log(favMovies)  // permanently altered
+console.log(`This sorted the array alphabetically and permanently altered the array`)
 
-// // console.log(favMovies)
-// // console.log(favMovies.indexOf('Django Unchained'))
+console.log(`
+2. Use the method pop`)
+favMovies.pop()
+console.log(favMovies)
+console.log(`The pop method removed the last element ('Volver') from the array`)
 
-// favMovies.splice(favMovies.indexOf('Django Unchained'), 1, 'Avatar')
+console.log(`
+3. push "Guardians of the Galaxy"`)
+favMovies.push("Guardians of the Galaxy")
+console.log(favMovies)
+console.log(`favMovies.push("Guardians of the Galaxy") added a new element to the end of array `)
 
-// console.log(favMovies)
+console.log(`
+4. Reverse the array`)
+favMovies.reverse()
+console.log(favMovies)
 
-// function midpoint(num){
-//   return Math.round(num/2)
-// }
+console.log(`
+5. Use the shift method`)
+favMovies.shift()
+console.log(favMovies)
+console.log(`favMovies.shift() removed the first element ('Guardians of the Galaxy') from the array`)
 
-// const middle = midpoint(favMovies.length)
+console.log(`
+6. unshift - what does it return?`)
+console.log(`console.log(favMovies).unshift('Back to the future')) returns: `)
+console.log(favMovies.unshift('Back to the future'))
+console.log(`This appears to return the length (number of elements) of the updated array:`)
+console.log(favMovies)
+console.log(`We can see that 'Back to the future' was added to the beginning of the array.`)
 
-// // console.log(favMovies.slice(middle))
+console.log(`
+7. splice "Django Unchained" and add "Avatar" (try finding the index of "Django Unchained", instead of counting it yourself) Thought question: did this permanently alter our array?`)
 
-// favMovies.slice(middle)
+favMovies.splice(favMovies.indexOf('Django Unchained'), 1, 'Avatar')
+console.log(favMovies)
+console.log(`Yes, this permanently altered our array`)
 
-// console.log(favMovies)  // no slicing did not permanently alter our array
+console.log(`
+8. slice the last half of the array(challenge yourself and try to programatically determine the middle of the array rather than counting it and hard coding it) - Thought question: did this permanently alter our array?`)
 
-// let slicedArray = favMovies.slice(middle)
+function midpoint(num){
+  return Math.round(num/2)
+}
 
-// console.log(slicedArray)
+const middle = midpoint(favMovies.length)
 
-// console.log(favMovies.indexOf('Fast and Furious'))
+favMovies.slice(middle)
+console.log(favMovies)
+console.log(`No, slicing did not permanently alter our array.`)
 
-// console.log(favMovies.indexOf('A movie not in the array')) //Returns -1
+console.log(`
+9. store the value of your slice in a variable, console.log it - Thought question: what is going on here?`)
+let slicedArray = favMovies.slice(middle)
+console.log(slicedArray)
+console.log(`slicing an array returns a new array seperate from the array that was sliced`)
 
-// // 12. Thought question: that we declared the variable favMovies with const, and yet, we were allowed to change the array. Weird? Should we have used let?
+console.log(`
+10. console.log your final results`)
+console.log(favMovies)
 
-// // const doesn't allow reassignment of the variable but since arrays are mutable the elements inside can still be changed.  We could have used let.  Should we have?  Well since we were not reassigning the variable const works fine in my opinion.  However since we are changing the contents there does seem to be a lot of different opinions about this on the web.  One way to stop this would be to use Object.freeze
+console.log(`
+11. After running the above tasks, console.log the index of "Fast and Furious" - If we removed it from the array, what value do we get when we look for the index of something that is not in the array`)
+console.log(`
+The index of 'Fast and Furious is ${favMovies.indexOf('Fast and Furious')}`)
+
+console.log(`
+console.log(favMovies.indexOf('A movie not in the array')) // returns: `)
+console.log(favMovies.indexOf('A movie not in the array')) //returns -1
+
+console.log(`
+12. Thought question: that we declared the variable favMovies with const, and yet, we were allowed to change the array. Weird? Should we have used let?`)
+
+console.log(`
+const doesn't allow reassignment of the variable but since arrays are mutable the elements inside can still be changed.  We could have used let.  Should we have?  Well since we were not reassigning the variable const works fine in my opinion.  However since we are changing the contents there does seem to be a lot of different opinions about this on the web.  One way to stop this would be to use Object.freeze`)
 
 // const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
 //                     ["Lucinda", "Jacc", "Neff", "Snoop"],
